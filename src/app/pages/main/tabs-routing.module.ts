@@ -15,7 +15,7 @@ const routes: Routes = [
             [
               {
                 path: '',
-                loadChildren: '../login/login.module#LoginPageModule'
+                loadChildren: '../home/home.module#HomePageModule'
               }
             ]
         },
@@ -25,20 +25,30 @@ const routes: Routes = [
             [
               {
                 path: '',
-                loadChildren: '../tab2/tab2.module#Tab2PageModule'
+                loadChildren: '../community/community.module#CommunityPageModule'
               }
             ]
         },
         {
-          path: 'tab3',
-          children:
-            [
-              {
-                path: '',
-                loadChildren: '../tab3/tab3.module#Tab3PageModule'
-              }
-            ]
-        },
+            path: 'tab4',
+            children:
+              [
+                {
+                  path: '',
+                  loadChildren: '../chat/chat.module#ChatPageModule'
+                }
+              ]
+          },
+          {
+            path: 'tab5',
+            children:
+              [
+                {
+                  path: '',
+                  loadChildren: '../inbox/inbox.module#InboxPageModule'
+                }
+              ]
+          },
         {
           path: '',
           redirectTo: '/tabs/tab1',
