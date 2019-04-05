@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-main',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPage implements OnInit {
 
-  constructor() { }
+  constructor(private menuCtrl: MenuController) { }
 
   ngOnInit() {
   }
 
+  // Side menu methods
+  openFirst() {
+    this.menuCtrl.enable(true, 'first');
+    this.menuCtrl.open('first');
+  }
+
+  openEnd() {
+    this.menuCtrl.open('end');
+  }
+
+  openCustom() {
+    this.menuCtrl.enable(true, 'custom');
+    this.menuCtrl.open('custom');
+  }
 }
