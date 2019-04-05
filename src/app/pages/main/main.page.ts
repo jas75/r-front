@@ -19,10 +19,6 @@ export class MainPage implements OnInit {
     this.menuCtrl.open('first');
   }
 
-  openEnd() {
-    this.menuCtrl.open('end');
-  }
-
   openCustom() {
     this.menuCtrl.enable(true, 'custom');
     this.menuCtrl.open('custom');
