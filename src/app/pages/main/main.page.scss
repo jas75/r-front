@@ -1,12 +1,17 @@
 ion-header {
     button {
-        width: 10%;
+        width: 7%;
         padding: 0;
         background-color: transparent;
+        margin-left: 5px;
     
     }
     img {
-        width: 100%;
         border-radius: 5px;
+    }
+
+    ion-title {
+        padding-left: 35px;
+        padding-right:0;
     }
 }
