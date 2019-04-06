@@ -1,4 +1,7 @@
 ion-content {
+
+   --ion-background-color:white;
+
     button{
         position: absolute;
         float: left;
@@ -58,4 +61,8 @@ ion-content {
     font-weight: 100;
     color: #b2b2b2;
     font-size: 1.2em;
+}
+
+.dark-background {
+    background-color: #f4f5f8;
 }
