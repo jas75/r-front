@@ -19,3 +19,7 @@ ion-header {
         border-radius: 4px !important;
     }
 }
+
+ion-toolbar {
+    --border-color: transparent;
+}
