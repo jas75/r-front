@@ -1,14 +1,13 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>home</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content padding> 
+<ion-content (ionScroll)="onScrollUp($event)" padding> 
   
 
+  <div class="bandeau">
+    News Home Popular
+  </div>
+
     <!-- <slides-example></slides-example> -->
-  <ion-slides (ionSlideDidChange)="onSlideChange($event)">
+  <ion-slides style="height: auto;" [scrollbar]="true" (ionSlideDidChange)="onSlideChange($event)">
 
       <ion-slide>
           <ion-card>
@@ -25,18 +24,31 @@
       </ion-slide>
   
       <ion-slide>
-          <ion-card>
-              <ion-item>
-                <ion-icon name="pin" slot="start"></ion-icon>
-                <ion-label>ion-item in a card, icon left, button right</ion-label>
-                <ion-button fill="outline" slot="end">View</ion-button>
-              </ion-item>
+          
+            <div class="card">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur explicabo maxime odio rerum. Deserunt nostrum quos praesentium odio odit sed qui, illo perferendis. Ad provident repudiandae minima quod, tempore nemo?
+            </div>
             
-              <ion-card-content>
-                This is content, without any paragraph or header tags,
-                within an ion-card-content element.
-              </ion-card-content>
-            </ion-card>
+            <div class="card">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur explicabo maxime odio rerum. Deserunt nostrum quos praesentium odio odit sed qui, illo perferendis. Ad provident repudiandae minima quod, tempore nemo?
+            </div>
+
+
+            <div class="card">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur explicabo maxime odio rerum. Deserunt nostrum quos praesentium odio odit sed qui, illo perferendis. Ad provident repudiandae minima quod, tempore nemo?
+              </div>
+              
+              <div class="card">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur explicabo maxime odio rerum. Deserunt nostrum quos praesentium odio odit sed qui, illo perferendis. Ad provident repudiandae minima quod, tempore nemo?
+              </div>
+
+              <div class="card">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur explicabo maxime odio rerum. Deserunt nostrum quos praesentium odio odit sed qui, illo perferendis. Ad provident repudiandae minima quod, tempore nemo?
+                </div>
+                
+                <div class="card">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur explicabo maxime odio rerum. Deserunt nostrum quos praesentium odio odit sed qui, illo perferendis. Ad provident repudiandae minima quod, tempore nemo?
+                </div>
             
       </ion-slide>
   

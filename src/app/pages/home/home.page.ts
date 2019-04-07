@@ -7,6 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
+  indexScroll = 0;
+
+
+  test: Array<any> = [2,3,1,5,4,9,34,0];
+
   constructor() { }
 
   ngOnInit() {
@@ -32,6 +37,18 @@ export class HomePage implements OnInit {
     });
   }
 
+
+  onScrollUp(event) {
+    if(event.scrollTop < this.indexScroll) {
+      var bandeau: any = document.getElementsByClassName('bandeau')[0];
+      bandeau.style.marginTop = '50px';
+    }
+    else {
+      var bandeau: any = document.getElementsByClassName('bandeau')[0];
+      bandeau.style.marginTop = 'unset';
+    }
+    this.indexScroll = event.scrollTop;
+  }
 
 
 
