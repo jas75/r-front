@@ -24,32 +24,29 @@ export class HomePage implements OnInit {
   }
 
   onSlideChange(event) {
-    console.log(event);
+    // console.log(event);
 
-    const slides = document.querySelector('ion-slides');
+    // const slides = document.querySelector('ion-slides');
 
-    slides.getActiveIndex().then(result => {
-      console.log(result);
-    });
+    // slides.getActiveIndex().then(result => {
+    //   console.log(result);
+    // });
 
-    slides.isBeginning().then(result => {
-      console.log(result);
-    });
+    // slides.isBeginning().then(result => {
+    //   console.log(result);
+    // });
   }
 
 
-  onScrollUp(event) {
-    if(event.scrollTop < this.indexScroll) {
-      var bandeau: any = document.getElementsByClassName('bandeau')[0];
-      bandeau.style.marginTop = '50px';
+  onScrollUp(event) {;
+    if(event.detail.scrollTop < this.indexScroll) {
+      const bandeau: any = document.getElementsByClassName('bandeau')[0];
+      bandeau.style.marginTop = '-15px';
     }
     else {
-      var bandeau: any = document.getElementsByClassName('bandeau')[0];
-      bandeau.style.marginTop = 'unset';
+      const bandeau: any = document.getElementsByClassName('bandeau')[0];
+      bandeau.style.marginTop = '-50px';
     }
-    this.indexScroll = event.scrollTop;
+    this.indexScroll = event.detail.scrollTop;
   }
-
-
-
 }
