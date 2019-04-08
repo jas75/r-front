@@ -5,9 +5,9 @@
   <div class="bandeau">
 
     <div class="wrapper">
-        <div class="one active">News</div>
-        <div class="two">Home</div>
-        <div class="three">Popular</div>
+        <div (click)="navBarClick(0)" [ngClass]="{'active': true}">News</div>
+        <div (click)="navBarClick(1)">Home</div>
+        <div (click)="navBarClick(2)">Popular</div>
       </div>
   </div>
 

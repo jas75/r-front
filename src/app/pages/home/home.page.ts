@@ -9,7 +9,6 @@ export class HomePage implements OnInit {
 
   indexScroll = 0;
 
-
   test: Array<any> = [2,3,1,5,4,9,34,0];
 
   constructor() { }
@@ -21,6 +20,18 @@ export class HomePage implements OnInit {
         effect: 'flip',
         initialSlide: 1
       };
+  }
+
+  navBarClick(menu: number) {
+    const slides = document.querySelector('ion-slides');
+      slides.options = {
+        effect: 'flip',
+        initialSlide: 1
+      };
+
+      slides.slideTo(menu).then(result => {
+        console.log("ca marche sur le menu" + menu);
+      })
   }
 
   onSlideChange(event) {

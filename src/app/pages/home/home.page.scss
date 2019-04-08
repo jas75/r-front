@@ -36,11 +36,13 @@ ion-slides {
         display: inline-block;
         width: 30%;
         height: 100%;
+        color: #919294;
     }
     
 
     .active {
         font-weight: 700;
+        color: black;
         border-bottom: 2px solid blue;
     }
 }
