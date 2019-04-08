@@ -24,8 +24,6 @@ export class HomePage implements OnInit {
   }
 
   onSlideChange(event) {
-
-    
     // console.log(event);
 
     // const slides = document.querySelector('ion-slides');
@@ -52,7 +50,7 @@ export class HomePage implements OnInit {
     }
     else {
       const bandeau: any = document.getElementsByClassName('bandeau')[0];
-      bandeau.style.marginTop = '-50px';
+      bandeau.style.marginTop = '-100px';
     }
     this.indexScroll = event.detail.scrollTop;
   }
