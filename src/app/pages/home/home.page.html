@@ -3,11 +3,16 @@
   
 
   <div class="bandeau">
-    News Home Popular
+
+    <div class="wrapper">
+        <div class="one">News</div>
+        <div class="two">Home</div>
+        <div class="three">Popular</div>
+      </div>
   </div>
 
     <!-- <slides-example></slides-example> -->
-  <ion-slides style="height: auto;" [scrollbar]="true" (ionSlideDidChange)="onSlideChange($event)">
+  <ion-slides style="height: auto;" (ionSlideDidChange)="onSlideChange($event)" (ionSlideDrag)="onSlidDrag($event)">
 
       <ion-slide>
           <ion-card>

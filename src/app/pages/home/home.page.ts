@@ -24,6 +24,8 @@ export class HomePage implements OnInit {
   }
 
   onSlideChange(event) {
+
+    
     // console.log(event);
 
     // const slides = document.querySelector('ion-slides');
@@ -35,6 +37,11 @@ export class HomePage implements OnInit {
     // slides.isBeginning().then(result => {
     //   console.log(result);
     // });
+  }
+
+  onSlidDrag(event) {
+    const bandeau: any = document.getElementsByClassName('bandeau')[0];
+      bandeau.style.marginTop = '-15px';
   }
 
 
