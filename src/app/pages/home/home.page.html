@@ -14,6 +14,7 @@
     <!-- <slides-example></slides-example> -->
   <ion-slides style="height: auto;" (ionSlideDidChange)="onSlideChange($event)" (ionSlideDrag)="onSlidDrag($event)">
 
+    <!-- slide News -->
       <ion-slide>
           <ion-card>
               <ion-card-header>
@@ -28,35 +29,15 @@
             </ion-card>
       </ion-slide>
   
+      <!-- slide Home -->
       <ion-slide>
           
-            <div class="card">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur explicabo maxime odio rerum. Deserunt nostrum quos praesentium odio odit sed qui, illo perferendis. Ad provident repudiandae minima quod, tempore nemo?
-            </div>
-            
-            <div class="card">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur explicabo maxime odio rerum. Deserunt nostrum quos praesentium odio odit sed qui, illo perferendis. Ad provident repudiandae minima quod, tempore nemo?
-            </div>
-
-
-            <div class="card">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur explicabo maxime odio rerum. Deserunt nostrum quos praesentium odio odit sed qui, illo perferendis. Ad provident repudiandae minima quod, tempore nemo?
-              </div>
-              
-              <div class="card">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur explicabo maxime odio rerum. Deserunt nostrum quos praesentium odio odit sed qui, illo perferendis. Ad provident repudiandae minima quod, tempore nemo?
-              </div>
-
-              <div class="card">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur explicabo maxime odio rerum. Deserunt nostrum quos praesentium odio odit sed qui, illo perferendis. Ad provident repudiandae minima quod, tempore nemo?
-                </div>
-                
-                <div class="card">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur explicabo maxime odio rerum. Deserunt nostrum quos praesentium odio odit sed qui, illo perferendis. Ad provident repudiandae minima quod, tempore nemo?
-                </div>
+            <home-cmp></home-cmp>
             
       </ion-slide>
   
+
+      <!-- slide pop -->
       <ion-slide>
           <ion-card>
               <ion-item href="#" class="activated">
