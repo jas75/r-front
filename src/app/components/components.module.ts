@@ -4,12 +4,15 @@ import { HomeComponent } from './pages/home/home.component';
 import { IonicModule } from '@ionic/angular';
 import { PopComponent } from './pages/pop/pop.component';
 import { NewsComponent } from './pages/news/news.component';
+import { CardComponent } from './UI/card/card.component';
+
 
 @NgModule({
   declarations: [
     HomeComponent,
     PopComponent,
-    NewsComponent
+    NewsComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,
@@ -18,7 +21,8 @@ import { NewsComponent } from './pages/news/news.component';
   exports: [
     HomeComponent,
     PopComponent,
-    NewsComponent
+    NewsComponent,
+    CardComponent
   ]
 })
 export class ComponentsModule { }
