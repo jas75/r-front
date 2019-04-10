@@ -7,6 +7,8 @@ import { NewsComponent } from './pages/news/news.component';
 import { CardComponent } from './UI/card/card.component';
 import { SideMenuComponent } from './pages/side-menu/side-menu.component';
 import { CredentialsComponent } from './pages/credentials/credentials.component';
+import { LoginComponent } from './UI/modals/login/login.component';
+import { SignupComponent } from './UI/modals/signup/signup.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { CredentialsComponent } from './pages/credentials/credentials.component'
     NewsComponent,
     CardComponent,
     SideMenuComponent,
-    CredentialsComponent
+    CredentialsComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     CommonModule,
@@ -31,6 +35,8 @@ import { CredentialsComponent } from './pages/credentials/credentials.component'
     CredentialsComponent
   ],
   entryComponents: [
+    LoginComponent,
+    SignupComponent
   ]
 })
 export class ComponentsModule { }
