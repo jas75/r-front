@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { Platform, MenuController, ModalController } from '@ionic/angular';
+import { Platform, ModalController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { ModalComponent } from './components/UI/modal/modal.component';
@@ -20,7 +20,6 @@ export class AppComponent {
     private platform: Platform,
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
-    private menuCtrl: MenuController,
     public modalController: ModalController
   ) {
     this.initializeApp();
@@ -46,8 +45,4 @@ export class AppComponent {
     await modal.present();
 }
 
-
-  closeSideMenu() {
-    this.menuCtrl.close();
-  }
 }

@@ -6,6 +6,7 @@ import { PopComponent } from './pages/pop/pop.component';
 import { NewsComponent } from './pages/news/news.component';
 import { CardComponent } from './UI/card/card.component';
 import { ModalComponent } from './UI/modal/modal.component';
+import { SideMenuComponent } from './pages/side-menu/side-menu.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { ModalComponent } from './UI/modal/modal.component';
     PopComponent,
     NewsComponent,
     CardComponent,
-    ModalComponent
+    ModalComponent,
+    SideMenuComponent
   ],
   imports: [
     CommonModule,
@@ -24,7 +26,8 @@ import { ModalComponent } from './UI/modal/modal.component';
     HomeComponent,
     PopComponent,
     NewsComponent,
-    CardComponent
+    CardComponent,
+    SideMenuComponent
   ],
   entryComponents: [
     ModalComponent
