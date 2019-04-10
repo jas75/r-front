@@ -6,7 +6,7 @@ import { SignupComponent } from '../signup/signup.component';
 @Component({
   selector: 'app-credentials',
   templateUrl: './credentials.component.html',
-  styleUrls: ['./credentials.component.scss'],
+  styleUrls: ['./credentials.component.scss', '../modal.component.scss'],
 })
 export class CredentialsComponent implements OnInit {
 

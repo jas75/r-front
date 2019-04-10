@@ -1,0 +1,30 @@
+.body {
+    background-color: white;
+    height: 100%;
+
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.dismiss{
+    position: absolute;
+    float: left;
+    top: 10px;
+    left: 5px;
+    background-color: transparent;
+    color: #727272;
+    ion-icon {
+        font-size: 2em;
+    }
+}
+
+.back-arrow {
+    text-align: center;
+    margin-top: 15px;
+
+    button {
+        border-radius: 10px;
+        font-size: 2em;
+        background-color: white;
+    }
+}

@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MenuController, ModalController } from '@ionic/angular';
-import { CredentialsPage } from 'src/app/pages/credentials/credentials.page';
 import { CredentialsComponent } from '../../UI/modals/credentials/credentials.component';
 
 @Component({
