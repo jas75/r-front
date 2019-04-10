@@ -5,10 +5,10 @@
     <img *ngIf="isLoggedIn" src="../assets/jas.png">
     <img *ngIf="!isLoggedIn" src="../assets/avatar.png">
 
-    <div class="username">u/dov75</div>
+    <div *ngIf="isLoggedIn" class="username">u/dov75</div>
 </div>
 
-<table class="stats">
+<table class="stats" *ngIf="isLoggedIn">
     <tbody>
         <tr>
             <td>
@@ -37,8 +37,8 @@
   
     
 <ion-list>
-  <ion-item><ion-icon class="light-grey-font" name="person"></ion-icon> &nbsp;&nbsp;&nbsp;&nbsp; My profile</ion-item>
-  <ion-item><ion-icon class="light-grey-font" name="time"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp; History</ion-item>
+  <ion-item *ngIf="isLoggedIn"><ion-icon class="light-grey-font" name="person"></ion-icon> &nbsp;&nbsp;&nbsp;&nbsp; My profile</ion-item>
+  <ion-item *ngIf="isLoggedIn"><ion-icon class="light-grey-font" name="time"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp; History</ion-item>
+  <ion-item *ngIf="!isLoggedIn"><ion-icon class="light-grey-font" name="time"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp; Sign up/ Log in</ion-item>
   <ion-item><ion-icon class="light-grey-font" name="cog"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp; Settings</ion-item>
-  <ion-item (click)="openModal()"><ion-icon class="light-grey-font" name="cog"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp; register</ion-item>
 </ion-list>

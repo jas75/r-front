@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { MenuController } from '@ionic/angular';
 
 @Component({
@@ -7,6 +7,8 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['./side-menu.component.scss'],
 })
 export class SideMenuComponent implements OnInit {
+
+  @Input() isLoggedIn: boolean;
 
   constructor(
     private menuCtrl: MenuController

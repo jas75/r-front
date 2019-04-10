@@ -13,7 +13,7 @@ import { CredentialsPage } from './pages/credentials/credentials.page';
 })
 export class AppComponent {
 
-  isLoggedIn = false;
+  isLoggedIn = true;
 
 
   constructor(
