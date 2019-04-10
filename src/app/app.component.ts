@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { Platform, ModalController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { ModalComponent } from './components/UI/modal/modal.component';
 import { CredentialsPage } from './pages/credentials/credentials.page';
 
 @Component({
@@ -13,7 +12,7 @@ import { CredentialsPage } from './pages/credentials/credentials.page';
 })
 export class AppComponent {
 
-  isLoggedIn = true;
+  isLoggedIn = false;
 
 
   constructor(

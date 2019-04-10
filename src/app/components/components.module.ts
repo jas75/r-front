@@ -5,8 +5,8 @@ import { IonicModule } from '@ionic/angular';
 import { PopComponent } from './pages/pop/pop.component';
 import { NewsComponent } from './pages/news/news.component';
 import { CardComponent } from './UI/card/card.component';
-import { ModalComponent } from './UI/modal/modal.component';
 import { SideMenuComponent } from './pages/side-menu/side-menu.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -15,8 +15,8 @@ import { SideMenuComponent } from './pages/side-menu/side-menu.component';
     PopComponent,
     NewsComponent,
     CardComponent,
-    ModalComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
@@ -27,10 +27,11 @@ import { SideMenuComponent } from './pages/side-menu/side-menu.component';
     PopComponent,
     NewsComponent,
     CardComponent,
-    SideMenuComponent
+    SideMenuComponent,
+    LoginComponent
   ],
   entryComponents: [
-    ModalComponent
+    
   ]
 })
 export class ComponentsModule { }

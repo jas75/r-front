@@ -2,7 +2,7 @@
     <ion-split-pane >
     <ion-menu side="start" menuId="first">
         
-        <ion-content>
+        <ion-content [scrollY]="false" [scrollX]="false">
           <side-menu-cmp [isLoggedIn]="isLoggedIn"></side-menu-cmp>
         </ion-content>
     </ion-menu>
