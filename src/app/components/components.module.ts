@@ -6,7 +6,7 @@ import { PopComponent } from './pages/pop/pop.component';
 import { NewsComponent } from './pages/news/news.component';
 import { CardComponent } from './UI/card/card.component';
 import { SideMenuComponent } from './pages/side-menu/side-menu.component';
-import { LoginComponent } from './pages/login/login.component';
+import { CredentialsComponent } from './pages/credentials/credentials.component';
 
 
 @NgModule({
@@ -16,7 +16,7 @@ import { LoginComponent } from './pages/login/login.component';
     NewsComponent,
     CardComponent,
     SideMenuComponent,
-    LoginComponent
+    CredentialsComponent
   ],
   imports: [
     CommonModule,
@@ -28,10 +28,9 @@ import { LoginComponent } from './pages/login/login.component';
     NewsComponent,
     CardComponent,
     SideMenuComponent,
-    LoginComponent
+    CredentialsComponent
   ],
   entryComponents: [
-    
   ]
 })
 export class ComponentsModule { }
