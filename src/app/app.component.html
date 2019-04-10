@@ -3,12 +3,12 @@
     <ion-menu side="start" menuId="first">
         
         <ion-content>
-
           <button (click)="closeSideMenu()">
               <ion-icon name="close"></ion-icon>
           </button>
           <div class="head-card">
-              <img src="../assets/jas.png">
+              <img *ngIf="isLoggedIn" src="../assets/jas.png">
+              <img *ngIf="!isLoggedIn" src="../assets/avatar.png">
 
               <div class="username">u/dov75</div>
           </div>
@@ -20,15 +20,13 @@
                           <ion-icon color="success" name="thumbs-up"></ion-icon>
 
                           <div>
-                            3 <br><span>likes</span>
+                            3 
                           </div>
                       </td>
                       <td>
                           <ion-icon color="primary" name="calendar"></ion-icon>
                           <div>
-                            3h
-                            <br>
-                            <span>User age</span>
+                            3M
                           </div>
                       </td>
                   </tr>
@@ -39,11 +37,15 @@
             <br>
             <br>
 
+
+
+            
               
           <ion-list>
             <ion-item><ion-icon class="light-grey-font" name="person"></ion-icon> &nbsp;&nbsp;&nbsp;&nbsp; My profile</ion-item>
             <ion-item><ion-icon class="light-grey-font" name="time"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp; History</ion-item>
             <ion-item><ion-icon class="light-grey-font" name="cog"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp; Settings</ion-item>
+            <ion-item (click)="openModal()"><ion-icon class="light-grey-font" name="cog"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp; register</ion-item>
           </ion-list>
         </ion-content>
     </ion-menu>

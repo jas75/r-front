@@ -7,7 +7,7 @@ const routes: Routes = [
   { path: 'home', loadChildren: './pages/home/home.module#HomePageModule' },
   { path: 'chat', loadChildren: './pages/chat/chat.module#ChatPageModule' },
   { path: 'inbox', loadChildren: './pages/inbox/inbox.module#InboxPageModule' },
-  { path: 'signup', loadChildren: './pages/signup/signup.module#SignupPageModule' },
+  { path: 'credentials', loadChildren: './pages/credentials/credentials.module#CredentialsPageModule' }
   // { path: 'pageHome', loadChildren: './components/components.module#ComponentsModule' }
 ];
 

@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
 
   groupName: string = 'Home group';
   username: string = 'username';
-  title: string = 'title';
+  title: string = 'title de fou pour faire super long !!!!!!';
   content: string = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, at eos? Saepe delectus, iste explicabo repellat eaque deleniti dignissimos esse rem sequi dolore commodi quod recusandae nihil doloremque. At, molestias!';
   constructor() { }
 

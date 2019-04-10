@@ -5,6 +5,7 @@ import { IonicModule } from '@ionic/angular';
 import { PopComponent } from './pages/pop/pop.component';
 import { NewsComponent } from './pages/news/news.component';
 import { CardComponent } from './UI/card/card.component';
+import { ModalComponent } from './UI/modal/modal.component';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { CardComponent } from './UI/card/card.component';
     HomeComponent,
     PopComponent,
     NewsComponent,
-    CardComponent
+    CardComponent,
+    ModalComponent
   ],
   imports: [
     CommonModule,
@@ -23,6 +25,9 @@ import { CardComponent } from './UI/card/card.component';
     PopComponent,
     NewsComponent,
     CardComponent
+  ],
+  entryComponents: [
+    ModalComponent
   ]
 })
 export class ComponentsModule { }
