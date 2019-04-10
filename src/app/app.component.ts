@@ -3,7 +3,6 @@ import { Component } from '@angular/core';
 import { Platform, ModalController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
-import { CredentialsPage } from './pages/credentials/credentials.page';
 
 @Component({
   selector: 'app-root',
@@ -18,8 +17,7 @@ export class AppComponent {
   constructor(
     private platform: Platform,
     private splashScreen: SplashScreen,
-    private statusBar: StatusBar,
-    public modalController: ModalController
+    private statusBar: StatusBar
   ) {
     this.initializeApp();
   }
@@ -30,18 +28,4 @@ export class AppComponent {
       this.splashScreen.hide();
     });
   }
-
-
-  async openModal() {
-    const modal: HTMLIonModalElement =
-       await this.modalController.create({
-          component: CredentialsPage,
-          componentProps: {
-             aParameter: true,
-             otherParameter: new Date()
-          }
-    });
-    await modal.present();
-}
-
 }

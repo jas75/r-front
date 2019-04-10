@@ -6,7 +6,7 @@ import { PopComponent } from './pages/pop/pop.component';
 import { NewsComponent } from './pages/news/news.component';
 import { CardComponent } from './UI/card/card.component';
 import { SideMenuComponent } from './pages/side-menu/side-menu.component';
-import { CredentialsComponent } from './pages/credentials/credentials.component';
+import { CredentialsComponent } from './UI/modals/credentials/credentials.component';
 import { LoginComponent } from './UI/modals/login/login.component';
 import { SignupComponent } from './UI/modals/signup/signup.component';
 
@@ -31,12 +31,12 @@ import { SignupComponent } from './UI/modals/signup/signup.component';
     PopComponent,
     NewsComponent,
     CardComponent,
-    SideMenuComponent,
-    CredentialsComponent
+    SideMenuComponent
   ],
   entryComponents: [
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    CredentialsComponent
   ]
 })
 export class ComponentsModule { }

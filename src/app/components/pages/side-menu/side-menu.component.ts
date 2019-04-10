@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MenuController, ModalController } from '@ionic/angular';
 import { CredentialsPage } from 'src/app/pages/credentials/credentials.page';
+import { CredentialsComponent } from '../../UI/modals/credentials/credentials.component';
 
 @Component({
   selector: 'side-menu-cmp',
@@ -21,7 +22,7 @@ export class SideMenuComponent implements OnInit {
   async openModal() {
     const modal: HTMLIonModalElement =
        await this.modalController.create({
-          component: CredentialsPage,
+          component: CredentialsComponent,
           componentProps: {
              aParameter: true,
              otherParameter: new Date()

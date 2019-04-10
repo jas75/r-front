@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { LoginComponent } from '../../UI/modals/login/login.component';
-import { SignupComponent } from '../../UI/modals/signup/signup.component';
+import { LoginComponent } from '../login/login.component';
+import { SignupComponent } from '../signup/signup.component';
 
 @Component({
-  selector: 'credentials-cmp',
+  selector: 'app-credentials',
   templateUrl: './credentials.component.html',
   styleUrls: ['./credentials.component.scss'],
 })
@@ -15,6 +15,7 @@ export class CredentialsComponent implements OnInit {
   ) { }
 
   ngOnInit() {}
+
 
   async openLoginModal() {
     const modal: HTMLIonModalElement =
@@ -40,6 +41,10 @@ export class CredentialsComponent implements OnInit {
     });
          
     await modal.present();
+  }
+
+  dismissModal() {
+    this.modalController.dismiss();
   }
 
 }
