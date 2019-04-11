@@ -9,6 +9,7 @@ import { SideMenuComponent } from './pages/side-menu/side-menu.component';
 import { CredentialsComponent } from './UI/modals/credentials/credentials.component';
 import { LoginComponent } from './UI/modals/login/login.component';
 import { SignupComponent } from './UI/modals/signup/signup.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { SignupComponent } from './UI/modals/signup/signup.component';
   ],
   imports: [
     CommonModule,
-    IonicModule
+    IonicModule,
+    ReactiveFormsModule
   ],
   exports: [
     HomeComponent,
