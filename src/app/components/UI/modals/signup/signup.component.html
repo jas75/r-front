@@ -2,18 +2,35 @@
     <div class="back-arrow">
             <button (click)="dismissModal()"> <ion-icon name="arrow-up"></ion-icon></button>
     </div>
+    
+
+    <img src="../../../../assets/planet.png">
+
+    <p>Create an account</p>
 
     <form [formGroup]="signupForm" (ngSubmit)="logForm()">
+
       <ion-item>
-        <ion-label>Todo</ion-label>
-        <ion-input type="text" formControlName="title"></ion-input>
+        <ion-input type="text" formControlName="email" placeholder="Email"></ion-input>
       </ion-item>
+
       <ion-item>
-        <ion-label>Description</ion-label>
-        <ion-textarea formControlName="description"></ion-textarea>
+        <ion-input  type="text" placeholder="Username" formControlName="username"></ion-input>
       </ion-item>
+
+      <ion-item>
+        <ion-input  type="password" placeholder="Password" formControlName="password"></ion-input>
+      </ion-item>
+      
+
+      <div class="terms">
+          By signing up, you agree to our <a href="#">Terms</a> and that you have read our <a href="#">Privacy Policy</a> and <a href="#">Content Policy</a>
+      </div>
       <button ion-button type="submit" [disabled]="!signupForm.valid">Submit</button>
+      
     </form>
+
+    
 
 </div>
 
