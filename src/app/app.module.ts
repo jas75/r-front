@@ -20,7 +20,7 @@ export function jwtOptionsFactory(storage) {
       return storage.get('access_token');
     },
     whitelistedDomains: ['localhost:3000']
-  }
+  };
 }
 
 @NgModule({
