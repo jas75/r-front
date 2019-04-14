@@ -1,10 +1,32 @@
-
 <div class="body">
-    refvd
-    <button (click)="dismissModal()">ferme</button>
-    tg
-    <p>
-      login works!
-    </p>
+  <div class="back-arrow">
+          <button (click)="dismissModal()"> <ion-icon name="arrow-up"></ion-icon></button>
+  </div>
+  
+
+  <img src="../../../../assets/planet.png">
+
+  <p>Create an account</p>
+
+  <form [formGroup]="loginForm" (ngSubmit)="logForm()">
+
+    <ion-item>
+      <ion-input type="text" formControlName="username" placeholder="Username"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-input  type="password" placeholder="Password" formControlName="password"></ion-input>
+    </ion-item>
+    
+
+    <div class="terms">
+        By signing up, you agree to our <a href="#">Terms</a> and that you have read our <a href="#">Privacy Policy</a> and <a href="#">Content Policy</a>
+    </div>
+    <button ion-button type="submit" [disabled]="!loginForm.valid">Log in</button>
+    
+  </form>
+
+  
+
 </div>
 

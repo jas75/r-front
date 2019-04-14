@@ -11,14 +11,12 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
-
   signupForm: FormGroup;
 
   constructor(
     public modalController: ModalController,
     private formBuilder: FormBuilder,
-    private authService: AuthService,
-    private router: Router
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -38,7 +36,6 @@ export class SignupComponent implements OnInit {
       });
     });
   }
-
 
   dismissModal(afterLogin: any) {
     if (afterLogin) {
