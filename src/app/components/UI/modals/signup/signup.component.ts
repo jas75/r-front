@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -16,7 +17,8 @@ export class SignupComponent implements OnInit {
   constructor(
     public modalController: ModalController,
     private formBuilder: FormBuilder,
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -31,14 +33,18 @@ export class SignupComponent implements OnInit {
   logForm() {
 
     this.authService.register(this.signupForm.value).subscribe( res => {
-      this.authService.login(this.signupForm.value).subscribe();
+      this.authService.login(this.signupForm.value).subscribe(() => {
+        this.dismissModal(true);
+      });
     });
-
-    
   }
 
 
-  dismissModal() {
-    this.modalController.dismiss();
+  dismissModal(afterLogin: any) {
+    if (afterLogin) {
+      this.modalController.dismiss(afterLogin);
+    } else {
+      this.modalController.dismiss();
+    }
   }
 }

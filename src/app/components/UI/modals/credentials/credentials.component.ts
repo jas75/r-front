@@ -26,7 +26,6 @@ export class CredentialsComponent implements OnInit {
              otherParameter: new Date()
           }
     });
-         
     await modal.present();
   }
 
@@ -39,12 +38,21 @@ export class CredentialsComponent implements OnInit {
              otherParameter: new Date()
           }
     });
-         
+
+    modal.onDidDismiss().then(event => {
+      if (event.data) {
+        this.dismissModal(event.data);
+      }
+    });
     await modal.present();
   }
 
-  dismissModal() {
-    this.modalController.dismiss();
+  dismissModal(afterLogin: boolean) {
+    if (afterLogin) {
+      this.modalController.dismiss(afterLogin);
+    } else {
+      this.modalController.dismiss();
+    }
   }
 
 }

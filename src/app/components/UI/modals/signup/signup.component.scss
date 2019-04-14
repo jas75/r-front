@@ -19,6 +19,10 @@ form {
             margin-top: 25%;
     }
 
+    button[type="submit"]:disabled {
+        background: #dddddd;
+    }
+
     ion-item {
 
         margin-bottom: 10px;

@@ -41,4 +41,5 @@
   <ion-item *ngIf="isLoggedIn"><ion-icon class="light-grey-font" name="time"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp; History</ion-item>
   <ion-item (click)="openModal()" *ngIf="!isLoggedIn"><ion-icon class="light-grey-font" name="log-in"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp; Sign up/ Log in</ion-item>
   <ion-item><ion-icon class="light-grey-font" name="cog"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp; Settings</ion-item>
+  <ion-item (click)="logout()" *ngIf="isLoggedIn"><ion-icon class="light-grey-font" name="cog"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp; Log out</ion-item>
 </ion-list>
