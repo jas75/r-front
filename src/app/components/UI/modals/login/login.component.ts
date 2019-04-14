@@ -20,20 +20,17 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: ['', [Validators.required, Validators.email]],
-      // ,
-      // username: ['', Validators.required],
+      username: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
   logForm() {
 
-    this.authService.register(this.loginForm.value).subscribe( res => {
-      this.authService.login(this.loginForm.value).subscribe(() => {
+    this.authService.login(this.loginForm.value).subscribe(() => {
         this.dismissModal(true);
-      });
     });
+
   }
 
   dismissModal(afterLogin: any) {
