@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -14,19 +15,26 @@ export class SignupComponent implements OnInit {
 
   constructor(
     public modalController: ModalController,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
     this.signupForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      username: ['', Validators.required],
-      password: ['', Validators.required]
+      email: ['', [Validators.required, Validators.email]],
+      // ,
+      // username: ['', Validators.required],
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
   logForm() {
-    console.log(this.signupForm.value);
+
+    this.authService.register(this.signupForm.value).subscribe( res => {
+      this.authService.login(this.signupForm.value).subscribe();
+    });
+
+    
   }
 
 

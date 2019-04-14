@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { MainPage } from './main.page';
+import { AuthGuardService } from 'src/app/services/auth/auth-guard.service';
 
 const routes: Routes = [
   {
@@ -25,7 +26,8 @@ const routes: Routes = [
             [
               {
                 path: '',
-                loadChildren: '../community/community.module#CommunityPageModule'
+                loadChildren: '../community/community.module#CommunityPageModule',
+                canActivate: [AuthGuardService]
               }
             ]
         },
