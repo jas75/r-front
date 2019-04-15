@@ -37,7 +37,7 @@ const routes: Routes = [
               [
                 {
                   path: '',
-                  loadChildren: '../chat/chat.module#ChatPageModule'
+                  loadChildren: '../profile/profile.module#ProfilePageModule'
                 }
               ]
           },

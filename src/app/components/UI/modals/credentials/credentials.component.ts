@@ -32,7 +32,6 @@ export class CredentialsComponent implements OnInit {
         this.dismissModal(event.data);
       }
     });
-    
     await modal.present();
   }
 

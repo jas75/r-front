@@ -85,3 +85,12 @@
   --ion-background-color:#eeeeee;
 
 }
+
+
+:root,
+:root[mode=ios],
+:root[mode=md] {
+  --ion-font-family: 'Ubuntu', sans-serif;
+
+  font-family: 'Ubuntu', sans-serif;
+}
