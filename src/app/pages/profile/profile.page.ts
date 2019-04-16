@@ -14,18 +14,16 @@ export class ProfilePage implements OnInit {
 
 
   onScroll(event) {
-    // console.log(event)
-
     const navbar: any = document.getElementsByClassName('navbar-menu')[0];
-    const slides: any = document.getElementsByTagName('ion-slides')[0];
+    const slides: any = document.getElementById('slides-profile');
     if (event.detail.scrollTop  > 150) {
       console.log('tamere');
-      navbar.style.position = "fixed";
-      navbar.style.top = "50px";
-      slides.style.paddingTop = "55px";
+      navbar.style.position = 'fixed';
+      navbar.style.top = '50px';
+      slides.style.paddingTop = '60px';
     } else {
-      slides.style.paddingTop = "unset";
-      navbar.style.position = "unset";
+      slides.style.paddingTop = 'unset';
+      navbar.style.position = 'unset';
     }
 
   }
