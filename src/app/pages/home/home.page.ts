@@ -51,7 +51,7 @@ export class HomePage implements OnInit {
   }
 
   private slides() {
-    const slides = document.querySelector('ion-slides');
+    const slides = document.querySelector('#home-slider');
     return slides;
   }
 
