@@ -10,30 +10,38 @@
 
       <div class="stats">
          
-        <ion-icon color="success" name="thumbs-up"></ion-icon>
+        <div class="likes">
+            <ion-icon color="primary" name="thumbs-up"></ion-icon>
 
-        <div>
-          3 
+            <div>
+              3 
+            </div>
         </div>
+       
     
-        <ion-icon color="primary" name="calendar"></ion-icon>
+        <div class="userage">
+            <ion-icon style="color:#198d46;" name="calendar"></ion-icon>
         
-        <div>
-          3M
+            <div>
+              3M
+            </div>
         </div>
-                     
+        <br>
+        <button>EDIT</button>
       </div>
 
       <div class="navbar-menu">
 
-          <div class="wrapper">
-              <div (click)="navBarClick(0)" [ngClass]="{'active': activeMenu == 0}">Posts</div>
-              <div (click)="navBarClick(1)" [ngClass]="{'active': activeMenu == 1}">Comments</div>
-              <div (click)="navBarClick(2)" [ngClass]="{'active': activeMenu == 2}">About</div>
-            </div>
-        </div>
+        <div class="wrapper">
+            <div (click)="navBarClick(0)" [ngClass]="{'active': activeMenu == 0}">Posts</div>
+            <div (click)="navBarClick(1)" [ngClass]="{'active': activeMenu == 1}">Comments</div>
+            <div (click)="navBarClick(2)" [ngClass]="{'active': activeMenu == 2}">About</div>
+          </div>
+      </div>
 
   </div>
+
+  
 
   <ion-slides id="slides-profile" style="height: auto;" (ionSlideDidChange)="onSlideChange($event)">
 

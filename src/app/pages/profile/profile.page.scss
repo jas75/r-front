@@ -13,6 +13,7 @@ ion-slides {
 
 
 .bandeau-user {
+   
     background-color: white;
     height: auto;
     width: 100%;
@@ -23,6 +24,7 @@ ion-slides {
     .bogoss {
         margin-left: 7%;
         padding-top: 13%;
+        display: inline-block;
         img {
             width: 20%;
             border-radius: 10px;
@@ -39,6 +41,17 @@ ion-slides {
         div {
             display: inline-block;
             padding: 5px;
+            font-size: 0.8em;
+        }
+        // float: right;
+
+        
+        button {
+            background-color: unset;
+            color: #397efb;
+            font-weight: 700;
+            float: right;
+            margin-top: 15px;
         }
     }
 
