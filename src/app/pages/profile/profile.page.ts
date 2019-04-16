@@ -14,9 +14,9 @@ export class ProfilePage implements OnInit {
   content: string = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, at eos? Saepe delectus, iste explicabo repellat eaque deleniti dignissimos esse rem sequi dolore commodi quod recusandae nihil doloremque. At, molestias!';
 
 
-  activeMenu = 1;
+  activeMenu = 0;
 
-  slides;
+  slides: any;
 
   constructor() { }
 
@@ -24,7 +24,7 @@ export class ProfilePage implements OnInit {
     this.slides = this.returnSlides();
     this.slides.options = {
       effect: 'flip',
-      initialSlide: 1
+      initialSlide: 0
     };
   }
 

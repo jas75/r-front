@@ -36,7 +36,8 @@ export class MainPage implements OnInit {
           componentProps: {
              aParameter: true,
              otherParameter: new Date()
-          }
+          },
+          cssClass: 'custom-modal'
     });
     await modal.present();
   }

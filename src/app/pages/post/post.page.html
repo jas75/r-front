@@ -1,5 +1,35 @@
 
-<ion-content>
+<ion-content [scrollY]="false" [scrollX]="false">
 
-  <button (click)="dismissModal()">X</button>
+  <div class="whatyoucando">
+    <div class="link">
+      <button>
+          <ion-icon name="link"></ion-icon>
+      </button>
+      <p>LINK</p>
+    </div>
+
+    <div class="image">
+      <button>
+          <ion-icon name="image"></ion-icon>
+      </button>
+      <p>IMAGE</p>
+      
+    </div>
+
+    <div class="video">
+      <button>
+          <ion-icon name="videocam"></ion-icon>
+      </button>
+      <p>VIDEO</p>
+    </div>
+    
+    <div class="text">
+      <button>
+          <ion-icon name="text"></ion-icon>
+      </button>
+      <p>TEXT</p>
+    </div>
+  </div>
+  <button class="dismiss" (click)="dismissModal()"><ion-icon name="close"></ion-icon></button>
 </ion-content>

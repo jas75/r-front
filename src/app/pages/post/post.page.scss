@@ -1,0 +1,36 @@
+ion-content {
+    --ion-background-color:#0cd1e8;
+    text-align: center;
+
+
+    .whatyoucando {
+        div {
+            display: inline-block;
+            margin:10px;
+            margin-top: 20%;
+        }
+
+        p {
+            color: white;
+            font-weight: 700;
+        }
+    }
+
+    button {
+        font-size: 1.5em;
+        border-radius: 50px;
+        width: 50px;
+        background-color: white;
+        height: 50px;
+    }
+
+    .dismiss {
+        background-color: transparent;
+        color: white;
+        font-size: 3em;
+        margin-top: 5%;
+    }
+ }
+
+ 
+ 
