@@ -27,93 +27,26 @@
       <div class="navbar-menu">
 
           <div class="wrapper">
-              <div class="active">Posts</div>
-              <div>Comments</div>
-              <div>About</div>
+              <div (click)="navBarClick(0)" [ngClass]="{'active': activeMenu == 0}">Posts</div>
+              <div (click)="navBarClick(1)" [ngClass]="{'active': activeMenu == 1}">Comments</div>
+              <div (click)="navBarClick(2)" [ngClass]="{'active': activeMenu == 2}">About</div>
             </div>
         </div>
 
   </div>
 
-  <ion-slides id="slides-profile" style="height: auto;">
+  <ion-slides id="slides-profile" style="height: auto;" (ionSlideDidChange)="onSlideChange($event)">
 
   <!-- slide News -->
     <ion-slide>
-        <ion-card>
-            <ion-card-header>
-              <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-              <ion-card-title>Card Title</ion-card-title>
-            </ion-card-header>
-          
-            <ion-card-content>
-              Keep close to Nature's heart... and break clear away, once in awhile,
-              and climb a mountain or spend a week in the woods. Wash your spirit clean.
-            </ion-card-content>
-          </ion-card>
 
-          <ion-card>
-              <ion-card-header>
-                <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                <ion-card-title>Card Title</ion-card-title>
-              </ion-card-header>
-            
-              <ion-card-content>
-                Keep close to Nature's heart... and break clear away, once in awhile,
-                and climb a mountain or spend a week in the woods. Wash your spirit clean.
-              </ion-card-content>
-            </ion-card>
-
-
-            <ion-card>
-                <ion-card-header>
-                  <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                  <ion-card-title>Card Title</ion-card-title>
-                </ion-card-header>
-              
-                <ion-card-content>
-                  Keep close to Nature's heart... and break clear away, once in awhile,
-                  and climb a mountain or spend a week in the woods. Wash your spirit clean.
-                </ion-card-content>
-              </ion-card>
-
-
-              <ion-card>
-                  <ion-card-header>
-                    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                    <ion-card-title>Card Title</ion-card-title>
-                  </ion-card-header>
-                
-                  <ion-card-content>
-                    Keep close to Nature's heart... and break clear away, once in awhile,
-                    and climb a mountain or spend a week in the woods. Wash your spirit clean.
-                  </ion-card-content>
-                </ion-card>
-
-
-                <ion-card>
-                    <ion-card-header>
-                      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                      <ion-card-title>Card Title</ion-card-title>
-                    </ion-card-header>
-                  
-                    <ion-card-content>
-                      Keep close to Nature's heart... and break clear away, once in awhile,
-                      and climb a mountain or spend a week in the woods. Wash your spirit clean.
-                    </ion-card-content>
-                  </ion-card>
-
-
-                  <ion-card>
-                      <ion-card-header>
-                        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-                        <ion-card-title>Card Title</ion-card-title>
-                      </ion-card-header>
-                    
-                      <ion-card-content>
-                        Keep close to Nature's heart... and break clear away, once in awhile,
-                        and climb a mountain or spend a week in the woods. Wash your spirit clean.
-                      </ion-card-content>
-                    </ion-card>
+        <app-card [groupName]="groupName" [username]="username" [title]="title" [content]="content"></app-card>
+        <app-card [groupName]="groupName" [username]="username" [title]="title" [content]="content"></app-card>
+        <app-card [groupName]="groupName" [username]="username" [title]="title" [content]="content"></app-card>
+        <app-card [groupName]="groupName" [username]="username" [title]="title" [content]="content"></app-card>
+        <app-card [groupName]="groupName" [username]="username" [title]="title" [content]="content"></app-card>
+        <app-card [groupName]="groupName" [username]="username" [title]="title" [content]="content"></app-card>
+        
 
     </ion-slide>
 
