@@ -13,12 +13,12 @@ import { TextPageModule } from '../post/text/text.module';
 
 @NgModule({
   imports: [
-    TextPageModule,
-    PostPageModule,
     CommonModule,
     FormsModule,
     IonicModule,
-    TabsPageRoutingModule
+    TabsPageRoutingModule,
+    TextPageModule,
+    PostPageModule
   ],
   declarations: [MainPage]
 })

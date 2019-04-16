@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { MainPage } from './main.page';
 import { AuthGuardService } from 'src/app/services/auth/auth-guard.service';
+import { TextPageModule } from '../post/text/text.module';
+import { PostPageModule } from '../post/post.module';
 
 const routes: Routes = [
   {
@@ -51,6 +53,8 @@ const routes: Routes = [
                 }
               ]
           },
+          { path: 'text', loadChildren: '../post/text/text.module#TextPageModule' },
+          { path: 'post', loadChildren: '../post/post.module#PostPageModule' },
         {
           path: '',
           redirectTo: '/tabs/tab1',
