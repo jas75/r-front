@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { MenuController, ModalController } from '@ionic/angular';
+import { PostPage } from '../post/post.page';
 
 @Component({
   selector: 'app-main',
@@ -8,7 +9,10 @@ import { MenuController } from '@ionic/angular';
 })
 export class MainPage implements OnInit {
 
-  constructor(private menuCtrl: MenuController) { }
+  constructor(
+    private menuCtrl: MenuController,
+    private modalController: ModalController
+    ) { }
 
   ngOnInit() {
   }
@@ -23,4 +27,19 @@ export class MainPage implements OnInit {
     this.menuCtrl.enable(true, 'custom');
     this.menuCtrl.open('custom');
   }
+
+
+  async openModal() {
+    const modal: HTMLIonModalElement =
+       await this.modalController.create({
+          component: PostPage,
+          componentProps: {
+             aParameter: true,
+             otherParameter: new Date()
+          }
+    });
+    await modal.present();
+  }
+
+
 }

@@ -27,10 +27,21 @@ const routes: Routes = [
               {
                 path: '',
                 loadChildren: '../community/community.module#CommunityPageModule',
-                canActivate: [AuthGuardService]
+                // canActivate: [AuthGuardService]
               }
             ]
         },
+        // {
+        //   path: 'tab3',
+        //   children:
+        //     [
+        //       {
+        //         path: '',
+        //         loadChildren: '../post/post.module#PostPageModule',
+        //         // canActivate: [AuthGuardService]
+        //       }
+        //     ]
+        // },
         {
             path: 'tab4',
             children:

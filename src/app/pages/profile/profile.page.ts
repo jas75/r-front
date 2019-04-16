@@ -16,19 +16,26 @@ export class ProfilePage implements OnInit {
 
   activeMenu = 1;
 
+  slides;
+
   constructor() { }
 
   ngOnInit() {
+    this.slides = this.returnSlides();
+    this.slides.options = {
+      effect: 'flip',
+      initialSlide: 1
+    };
   }
 
   navBarClick(menu: number) {
-    this.slides().slideTo(menu).then(result => {
+    this.slides.slideTo(menu).then(result => {
         this.activeMenu = menu;
       });
   }
 
   onSlideChange(event) {
-    this.slides().getActiveIndex().then(index => {
+    this.slides.getActiveIndex().then(index => {
       this.activeMenu = index;
     });
 
@@ -38,7 +45,6 @@ export class ProfilePage implements OnInit {
     const navbar: any = document.getElementsByClassName('navbar-menu')[0];
     const slides: any = document.getElementById('slides-profile');
     if (event.detail.scrollTop  > 150) {
-      console.log('tamere');
       navbar.style.position = 'fixed';
       navbar.style.top = '45px';
       slides.style.paddingTop = '60px';
@@ -48,7 +54,7 @@ export class ProfilePage implements OnInit {
     }
   }
 
-  private slides() {
+  private returnSlides() {
     const slides: any = document.querySelector('#slides-profile');
     return slides;
   }
