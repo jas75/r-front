@@ -31,17 +31,6 @@ const routes: Routes = [
               }
             ]
         },
-        // {
-        //   path: 'tab3',
-        //   children:
-        //     [
-        //       {
-        //         path: '',
-        //         loadChildren: '../post/post.module#PostPageModule',
-        //         // canActivate: [AuthGuardService]
-        //       }
-        //     ]
-        // },
         {
             path: 'tab4',
             children:
