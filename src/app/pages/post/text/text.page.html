@@ -1,12 +1,55 @@
 <ion-header>
-    <ion-toolbar>
-        <button (click)="dismissModal()"><ion-icon name="close"></ion-icon>
-        </button>
-      <ion-title>Text Post</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-toolbar>
+      <button (click)="dismissModal()"><ion-icon name="close"></ion-icon>
+      </button>
+    <ion-title>Text Post</ion-title>
+  </ion-toolbar>
+</ion-header>
 
 <ion-content>
   
+  <!-- <div class="community">
+    <p>Choose a community
+    </p>
+    <ion-icon name="arrow-dropdown"></ion-icon>
+  </div>
+
+  <div class="title">
+    An interesting title
+  </div>
+
+  <div class="text">
+    Your text post (optional)
+  </div> -->
+  <form>
+      <ion-grid>
+          <ion-row class="community">
+            <ion-col>
+            
+              <img src="../../../../assets/planet.png"><span>Choose a community</span>      <ion-icon name="arrow-dropdown"></ion-icon>
+              
+            </ion-col>
+          </ion-row>
+          <ion-row class="title">
+            <ion-col>
+                <ion-item>
+                  <ion-input type="text" placeholder="An interesting title"></ion-input>
+                </ion-item>
+            </ion-col>
+          </ion-row>
+    
+          <ion-row class="text">
+              <ion-col>
+
+                  <ion-item>
+                    <ion-textarea placeholder="Your text post (optional)"></ion-textarea>
+                  </ion-item>
+         
+              </ion-col>
+            </ion-row>
+      </ion-grid>
+  </form>
   
+
+
 </ion-content>

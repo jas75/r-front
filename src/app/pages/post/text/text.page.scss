@@ -13,6 +13,28 @@ button{
 
 ion-content {
     --ion-background-color: white;
+
+    .community {
+        font-weight: 700;
+        border-bottom: 1px solid #f2f2f2;
+
+
+        img {
+            width: 15%;
+        }
+
+        span {
+            position: relative;
+            bottom: 10px;
+            left: 5px;
+        }
+
+        ion-icon {
+            position: relative;
+            bottom: 6px;
+            left: 10px;
+        }
+    }
 }
 
 ion-toolbar {
