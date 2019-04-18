@@ -10,6 +10,7 @@ import { catchError, retry, tap } from 'rxjs/operators';
 
 
 const TOKEN_KEY = 'access_token';
+const USER_ID = 'username';
 
 @Injectable({
   providedIn: 'root'
@@ -63,6 +64,8 @@ export class AuthService {
     .pipe(
       tap(res => {
         this.storage.set(TOKEN_KEY, res['token']);
+        this.storage.set(USER_ID, res['username']);
+        // i cand decode the token to see if theres information i need 
         this.user = this.helper.decodeToken(res['token']);
         this.authenticationState.next(true);
       }),
