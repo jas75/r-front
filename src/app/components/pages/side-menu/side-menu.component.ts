@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { MenuController, ModalController } from '@ionic/angular';
 import { CredentialsComponent } from '../../UI/modals/credentials/credentials.component';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { User } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'side-menu-cmp',
@@ -12,13 +13,16 @@ export class SideMenuComponent implements OnInit {
 
   @Input() isLoggedIn: boolean;
 
+  user: User;
+
   constructor(
     private menuCtrl: MenuController,
     public modalController: ModalController,
-    private authService: AuthService
+    private authService: AuthService,
   ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
   async openModal() {
     const modal: HTMLIonModalElement =

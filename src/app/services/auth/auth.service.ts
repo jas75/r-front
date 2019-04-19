@@ -6,11 +6,12 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { Platform, AlertController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { catchError, retry, tap } from 'rxjs/operators';
+import { Identity } from 'src/app/interfaces/identity';
 
 
 
 const TOKEN_KEY = 'access_token';
-const USER_ID = 'username';
+const USER_ID = 'userid';
 
 @Injectable({
   providedIn: 'root'
@@ -59,12 +60,12 @@ export class AuthService {
     );
   }
 
-  login(credentials) {
-    return this.http.post(this.url + '/api/login', credentials)
+  login(credentials): Observable<Identity> {
+    return this.http.post<Identity>(this.url + '/api/login', credentials)
     .pipe(
       tap(res => {
         this.storage.set(TOKEN_KEY, res['token']);
-        this.storage.set(USER_ID, res['username']);
+        this.storage.set(USER_ID, res['userid']);
         // i cand decode the token to see if theres information i need 
         this.user = this.helper.decodeToken(res['token']);
         this.authenticationState.next(true);
@@ -95,7 +96,9 @@ export class AuthService {
 
   logout() {
     this.storage.remove(TOKEN_KEY).then(() => {
-      this.authenticationState.next(false);
+      this.storage.remove(USER_ID).then(() => {
+        this.authenticationState.next(false);
+      });
     });
   }
 

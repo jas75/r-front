@@ -1,4 +1,5 @@
+
 export interface Identity {
     token: string;
-    username: string;
+    userid: String;
 }
