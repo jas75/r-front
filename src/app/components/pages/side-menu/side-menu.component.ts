@@ -3,6 +3,8 @@ import { MenuController, ModalController } from '@ionic/angular';
 import { CredentialsComponent } from '../../UI/modals/credentials/credentials.component';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { User } from 'src/app/interfaces/user';
+import { UserService } from 'src/app/services/user/user.service';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'side-menu-cmp',
@@ -19,9 +21,35 @@ export class SideMenuComponent implements OnInit {
     private menuCtrl: MenuController,
     public modalController: ModalController,
     private authService: AuthService,
+    private userService: UserService,
+    private storage: Storage
   ) { }
 
   ngOnInit() {
+
+    console.log("SideMenuComponent loaded");
+
+    this.authService.authenticationState.subscribe(state => {
+      if (state) {
+        this.storage.get('userid').then(id => {
+          this.userService.getProfile(id).subscribe(user => {
+            console.log(user);
+          });
+        });
+      }
+    });
+
+    // if (this.authService.isAuthenticated()) {
+
+    //   this.storage.get('userid').then(id => {
+    //     this.userService.getProfile(id).subscribe(user => {
+    //       console.log(user);
+    //     });
+    //   });
+
+    // } else {
+    //   console.log('tamere');
+    // }
   }
 
   async openModal() {
