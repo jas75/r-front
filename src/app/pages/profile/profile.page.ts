@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/services/user/user.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { User } from 'src/app/interfaces/user';
 
 @Component({
   selector: 'app-profile',
@@ -14,18 +17,33 @@ export class ProfilePage implements OnInit {
   content: string = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, at eos? Saepe delectus, iste explicabo repellat eaque deleniti dignissimos esse rem sequi dolore commodi quod recusandae nihil doloremque. At, molestias!';
 
 
+  user: User;
+
   activeMenu = 0;
 
   slides: any;
 
-  constructor() { }
+  constructor(
+    private userService: UserService,
+    private authService: AuthService
+  ) { }
 
   ngOnInit() {
+    this.getUserProfile();
     this.slides = this.returnSlides();
     this.slides.options = {
       effect: 'flip',
       initialSlide: 0
     };
+  }
+
+  getUserProfile() {
+    this.authService.getUserId().then(id => {
+      this.userService.getProfile(id).subscribe(res => {
+        this.user = res.user;
+        console.log(this.user);
+      });
+    });
   }
 
   navBarClick(menu: number) {
@@ -38,7 +56,6 @@ export class ProfilePage implements OnInit {
     this.slides.getActiveIndex().then(index => {
       this.activeMenu = index;
     });
-
   }
 
   onScroll(event) {

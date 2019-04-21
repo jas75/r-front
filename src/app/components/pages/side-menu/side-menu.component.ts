@@ -36,8 +36,6 @@ export class SideMenuComponent implements OnInit {
           this.userService.getProfile(id).subscribe(res => {
             if (res.success) {
               this.user = res.user;
-
-              console.log(this.user);
             }
           });
         });
