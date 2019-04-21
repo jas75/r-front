@@ -13,7 +13,7 @@ import { Storage } from '@ionic/storage';
 })
 export class SideMenuComponent implements OnInit {
 
-  @Input() isLoggedIn: boolean;
+  isLoggedIn: boolean;
 
   user: User;
 
@@ -27,29 +27,24 @@ export class SideMenuComponent implements OnInit {
 
   ngOnInit() {
 
-    console.log("SideMenuComponent loaded");
+    console.log('SideMenuComponent loaded');
 
     this.authService.authenticationState.subscribe(state => {
       if (state) {
+        this.isLoggedIn = state;
         this.storage.get('userid').then(id => {
-          this.userService.getProfile(id).subscribe(user => {
-            console.log(user);
+          this.userService.getProfile(id).subscribe(res => {
+            if (res.success) {
+              this.user = res.user;
+
+              console.log(this.user);
+            }
           });
         });
+      } else {
+        this.isLoggedIn = state;
       }
     });
-
-    // if (this.authService.isAuthenticated()) {
-
-    //   this.storage.get('userid').then(id => {
-    //     this.userService.getProfile(id).subscribe(user => {
-    //       console.log(user);
-    //     });
-    //   });
-
-    // } else {
-    //   console.log('tamere');
-    // }
   }
 
   async openModal() {
@@ -63,11 +58,10 @@ export class SideMenuComponent implements OnInit {
     });
 
     modal.onDidDismiss().then(event => {
-      if(event.data) {
+      if (event.data) {
         this.closeSideMenu();
       }
-    })
-         
+    });
     await modal.present();
 }
 
