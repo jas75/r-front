@@ -11,7 +11,6 @@ import { AuthService } from 'src/app/services/auth/auth.service';
   styleUrls: ['./text.page.scss'],
 })
 export class TextPage implements OnInit {
-  
   textForm: FormGroup;
 
   userId: string;
@@ -53,15 +52,11 @@ export class TextPage implements OnInit {
       if (res.success) {
         console.log('maintenant redirige vers une page article');
       }
-      
-      if(res.msg) {
-        this.showAlert(res.msg);
-      }
     });
   }
 
   showAlert(msg) {
-    let alert = this.alertController.create({
+    const alert = this.alertController.create({
       message: msg,
       header: 'Error',
       buttons: ['OK']
