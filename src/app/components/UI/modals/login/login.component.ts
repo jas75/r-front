@@ -28,7 +28,6 @@ export class LoginComponent implements OnInit {
   }
 
   logForm() {
-
     this.authService.login(this.loginForm.value).subscribe(() => {
         this.dismissModal(true);
         this.router.navigate(['/tabs/tab1']);

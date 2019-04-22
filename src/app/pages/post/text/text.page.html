@@ -1,13 +1,15 @@
 <ion-header>
   <ion-toolbar>
-      <button (click)="dismissModal()"><ion-icon name="close"></ion-icon>
+      <button class="dismiss-btn" (click)="dismissModal()"><ion-icon name="close"></ion-icon>
       </button>
-    <ion-title>Text Post</ion-title>
+      <ion-title>Text Post</ion-title>
+
+      <button [disabled]="textForm.invalid" class="post-btn" (click)="logForm()" type="submit">POST</button> 
   </ion-toolbar>
 </ion-header>
 
 <ion-content >
-  <form>
+  <form [formGroup]="textForm" (ngSubmit)="logForm()">
       <ion-grid>
           <ion-row class="community">
             <ion-col>
@@ -19,7 +21,7 @@
           <ion-row class="title">
             <ion-col>
                 <ion-item>
-                  <ion-input type="text" placeholder="An interesting title"></ion-input>
+                  <ion-input type="text" placeholder="An interesting title" formControlName="title"></ion-input>
                 </ion-item>
             </ion-col>
           </ion-row>
@@ -28,12 +30,14 @@
               <ion-col>
 
                   <ion-item>
-                    <ion-textarea placeholder="Your text post (optional)"></ion-textarea>
+                    <ion-textarea formControlName="content" placeholder="Your text post (optional)"></ion-textarea>
                   </ion-item>
          
               </ion-col>
             </ion-row>
       </ion-grid>
+
+    
   </form>
   
 

@@ -38,6 +38,7 @@ export class AuthService {
   getUserId(): Promise<any> {
     return this.storage.get(USER_ID);
   }
+  
   // check if we have a token store
   checkToken() {
     this.storage.get(TOKEN_KEY).then(token => {

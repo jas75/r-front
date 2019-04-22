@@ -5,7 +5,7 @@
     <img *ngIf="isLoggedIn" src="../assets/jas.png">
     <img *ngIf="!isLoggedIn" src="../assets/avatar.png">
 
-    <div *ngIf="isLoggedIn && user" class="username">u/{{user.username}}</div>
+    <div *ngIf="isLoggedIn && user" class="username">{{user.username}}</div>
 </div>
 
 <table class="stats" *ngIf="isLoggedIn">
