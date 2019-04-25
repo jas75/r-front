@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { testUserAgent } from '@ionic/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-card',
@@ -15,9 +16,15 @@ export class CardComponent implements OnInit {
   @Input() content: string;
 
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
 
   ngOnInit() {}
+
+  toSinglePost() {
+    this.router.navigate(['/single-post']);
+  }
 
 }

@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PostService } from 'src/app/services/post/post.service';
 import { Storage } from '@ionic/storage';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { Router, NavigationExtras } from '@angular/router';
 
 @Component({
   selector: 'app-text',
@@ -20,7 +21,8 @@ export class TextPage implements OnInit {
     private formBuilder: FormBuilder,
     private postService: PostService,
     private authService: AuthService,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -50,7 +52,14 @@ export class TextPage implements OnInit {
 
     this.postService.createTextPost(post).subscribe(res => {
       if (res.success) {
+        const navigationExtras: NavigationExtras = {
+          queryParams: {
+            special: JSON.stringify(post)
+          }
+        };
         console.log('maintenant redirige vers une page article');
+        this.dismissModal();
+        this.router.navigate(['/single-post'], navigationExtras);
       }
     });
   }
