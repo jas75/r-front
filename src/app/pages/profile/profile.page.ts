@@ -41,7 +41,6 @@ export class ProfilePage implements OnInit {
     this.authService.getUserId().then(id => {
       this.userService.getProfile(id).subscribe(res => {
         this.user = res.user;
-        console.log(this.user);
       });
     });
   }

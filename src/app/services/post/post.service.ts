@@ -19,4 +19,8 @@ export class PostService {
     return this.http.post<PostResponse>(this.url + '/api/post/text', post);
   }
 
+  getPostByPostId(postid): Observable<PostResponse> {
+    return this.http.get<PostResponse>(this.url + '/api/post/get-post/' + postid);
+  }
+
 }

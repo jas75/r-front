@@ -52,17 +52,12 @@ export class TextPage implements OnInit {
 
     this.postService.createTextPost(post).subscribe(res => {
       if (res.success) {
-        console.log(res);
-        const navigationExtras: NavigationExtras = {
-          queryParams: {
-            special: JSON.stringify(post)
-          }
-        };
-        console.log('maintenant redirige vers une page article');
         this.dismissModal();
         this.router.navigate(['/single-post', res.post._id]);
       }
-    });
+    },
+    // handle all error cases
+    err => console.log(err));
   }
 
   showAlert(msg) {
