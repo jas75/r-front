@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-single-post',
@@ -9,11 +9,12 @@ import { Router } from '@angular/router';
 export class SinglePostPage implements OnInit {
 
   constructor(
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit() {
-    
+    console.log(this.activatedRoute.snapshot.paramMap.get('post-id'))
   }
 
   goBackHome() {
