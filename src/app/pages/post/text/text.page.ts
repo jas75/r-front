@@ -52,6 +52,7 @@ export class TextPage implements OnInit {
 
     this.postService.createTextPost(post).subscribe(res => {
       if (res.success) {
+        console.log(res);
         const navigationExtras: NavigationExtras = {
           queryParams: {
             special: JSON.stringify(post)
@@ -59,7 +60,7 @@ export class TextPage implements OnInit {
         };
         console.log('maintenant redirige vers une page article');
         this.dismissModal();
-        this.router.navigate(['/single-post'], navigationExtras);
+        this.router.navigate(['/single-post', res.post._id]);
       }
     });
   }

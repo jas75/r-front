@@ -13,7 +13,7 @@ export class SinglePostPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    console.log(this.router.getCurrentNavigation());
+    
   }
 
   goBackHome() {
