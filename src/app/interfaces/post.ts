@@ -6,7 +6,7 @@ export interface PostResponse {
 
 export interface Post {
     _id: string;
-    userid: string;
+    username: string;
     community: string;
     content: string;
     title: string;

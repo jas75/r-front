@@ -45,7 +45,7 @@ export class TextPage implements OnInit {
       this.userService.getProfile(userid).subscribe(userResponse => {
         const post = {
           username: userResponse.user.username,
-          community: this.userId,
+          community: userid,
           title: this.textForm.controls.title.value,
           content: this.textForm.controls.content.value
         };

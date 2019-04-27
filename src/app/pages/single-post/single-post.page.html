@@ -6,10 +6,11 @@
     <ion-buttons slot="start">
         <ion-back-button></ion-back-button>
       </ion-buttons>
-    <ion-title>single-post</ion-title>
+    <ion-title></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
 
+  <app-card *ngIf="post" [post]="post"></app-card>
 </ion-content>

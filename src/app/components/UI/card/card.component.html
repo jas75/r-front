@@ -6,12 +6,12 @@
       <div class="incoming-post">
         <div style="font-weight: 700;">
 
-            {{ groupName }}
+            {{ post.community }}
           
         </div>
       
         <div>
-            {{username}} - 11h
+            {{post.username }} - 11h
         </div>
       
       </div>
@@ -20,10 +20,10 @@
   
   
     <div class="box-content" (click)="toSinglePost()">
-      <h4 style="font-weight: 700;">  {{title}} </h4>
+      <h4 style="font-weight: 700;">  {{ post.title }} </h4>
   
       <div class="content">
-        {{content}}
+        {{post.content}}
       </div>
   
       <div class="react">
