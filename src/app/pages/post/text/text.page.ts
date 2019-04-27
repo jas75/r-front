@@ -5,6 +5,7 @@ import { PostService } from 'src/app/services/post/post.service';
 import { Storage } from '@ionic/storage';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { Router, NavigationExtras } from '@angular/router';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-text',
@@ -22,14 +23,11 @@ export class TextPage implements OnInit {
     private postService: PostService,
     private authService: AuthService,
     private alertController: AlertController,
-    private router: Router
+    private router: Router,
+    private userService: UserService
   ) { }
 
   ngOnInit() {
-
-    this.authService.getUserId().then(userid => {
-      this.userId = userid;
-    });
 
     this.textForm = this.formBuilder.group({
       title: ['', [Validators.required]],
@@ -43,21 +41,26 @@ export class TextPage implements OnInit {
 
   logForm() {
 
-    const post = {
-      userid: this.userId,
-      community: this.userId,
-      title: this.textForm.controls.title.value,
-      content: this.textForm.controls.content.value
-    };
+    this.authService.getUserId().then(userid => {
+      this.userService.getProfile(userid).subscribe(userResponse => {
+        const post = {
+          username: userResponse.user.username,
+          community: this.userId,
+          title: this.textForm.controls.title.value,
+          content: this.textForm.controls.content.value
+        };
 
-    this.postService.createTextPost(post).subscribe(res => {
-      if (res.success) {
-        this.dismissModal();
-        this.router.navigate(['/single-post', res.post._id]);
-      }
-    },
-    // handle all error cases
-    err => console.log(err));
+        this.postService.createTextPost(post).subscribe(res => {
+          if (res.success) {
+            this.dismissModal();
+            this.router.navigate(['/single-post', res.post._id]);
+          }
+        },
+        // handle all error cases
+        err => console.log(err));
+        
+      });
+    });
   }
 
   showAlert(msg) {
