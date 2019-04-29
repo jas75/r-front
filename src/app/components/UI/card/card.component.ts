@@ -12,6 +12,7 @@ export class CardComponent implements OnInit {
 
 
   @Input() post: Post;
+  @Input() isJustCreated: boolean = false;
 
 
   constructor(
