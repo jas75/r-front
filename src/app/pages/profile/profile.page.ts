@@ -33,19 +33,19 @@ export class ProfilePage implements OnInit {
   ngOnInit() {
 
     this.authService.authenticationState.subscribe(state => {
-      console.log(state);
       this.isLoggedIn = state;
-      console.log(this.isLoggedIn);
+      // have to wait the subscriber result to execute this code, there must have another solution
+      setTimeout(() => {
+        if (this.isLoggedIn) {
+          this.getUserProfile();
+          this.slides = this.returnSlides();
+          this.slides.options = {
+            effect: 'flip',
+            initialSlide: 0
+          };
+        }
+      }, 100);
     });
-
-    if (this.isLoggedIn) {
-      this.getUserProfile();
-      this.slides = this.returnSlides();
-      this.slides.options = {
-        effect: 'flip',
-        initialSlide: 0
-      };
-    }
   }
 
   getUserProfile() {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-community',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommunityPage implements OnInit {
 
-  constructor() { }
+  isLoggedIn: boolean;
+
+  constructor(
+    private authService: AuthService
+  ) { }
 
   ngOnInit() {
+    this.authService.authenticationState.subscribe(state => {
+      this.isLoggedIn = state;
+    });
   }
 
 }

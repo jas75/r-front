@@ -1,13 +1,10 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>community</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content padding>
-  
+
+<ion-content *ngIf="isLoggedIn" padding>
   
     community page works
 
     <home-cmp></home-cmp>
 </ion-content>
+
+<cred-cmp *ngIf="!isLoggedIn"></cred-cmp>

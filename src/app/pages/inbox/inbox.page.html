@@ -1,9 +1,6 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>inbox</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content padding>
+<ion-content *ngIf="isLoggedIn" padding>
   inbox page works
 </ion-content>
+
+<cred-cmp *ngIf="!isLoggedIn"></cred-cmp>
