@@ -1,97 +1,105 @@
-<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
-
-  <div class="bandeau-user">
-
-    <div class="bogoss">
-        <img src="./../../../assets/jas.png">
-        <div *ngIf="user" style="font-size:1.1em;"><strong>{{ user.username }}</strong></div>
-    </div>
-      
-
-      <div class="stats">
-         
-        <div class="likes">
-            <ion-icon color="primary" name="thumbs-up"></ion-icon>
-
-            <div>
-              3 
-            </div>
-        </div>
-       
-    
-        <div class="userage">
-            <ion-icon style="color:#198d46;" name="calendar"></ion-icon>
-        
-            <div>
-              3M
-            </div>
-        </div>
-        <br>
-        <button>EDIT</button>
-      </div>
-
-      <div class="navbar-menu">
-
-        <div class="wrapper">
-            <div (click)="navBarClick(0)" [ngClass]="{'active': activeMenu == 0}">Posts</div>
-            <div (click)="navBarClick(1)" [ngClass]="{'active': activeMenu == 1}">Comments</div>
-            <div (click)="navBarClick(2)" [ngClass]="{'active': activeMenu == 2}">About</div>
-          </div>
-      </div>
-
-  </div>
+<ion-content *ngIf="isLoggedIn" [scrollEvents]="true" (ionScroll)="onScroll($event)">
 
   
 
-  <ion-slides id="slides-profile" style="height: auto;" (ionSlideDidChange)="onSlideChange($event)">
+      <div class="bandeau-user">
 
-  <!-- slide News -->
-    <ion-slide>
-
-        <!-- <app-card [groupName]="groupName" [username]="username" [title]="title" [content]="content"></app-card>
-        <app-card [groupName]="groupName" [username]="username" [title]="title" [content]="content"></app-card>
-        <app-card [groupName]="groupName" [username]="username" [title]="title" [content]="content"></app-card>
-        <app-card [groupName]="groupName" [username]="username" [title]="title" [content]="content"></app-card>
-        <app-card [groupName]="groupName" [username]="username" [title]="title" [content]="content"></app-card>
-        <app-card [groupName]="groupName" [username]="username" [title]="title" [content]="content"></app-card> -->
-        
-
-    </ion-slide>
-
-    <!-- slide Home -->
-    <ion-slide>
-        
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-            <ion-card-title>Card Title</ion-card-title>
-          </ion-card-header>
-        
-          <ion-card-content>
-            Keep close to Nature's heart... and break clear away, once in awhile,
-            and climb a mountain or spend a week in the woods. Wash your spirit clean.
-          </ion-card-content>
-        </ion-card>
+          <div class="bogoss">
+              <img src="./../../../assets/jas.png">
+              <div *ngIf="user" style="font-size:1.1em;"><strong>{{ user.username }}</strong></div>
+          </div>
+            
+      
+            <div class="stats">
+               
+              <div class="likes">
+                  <ion-icon color="primary" name="thumbs-up"></ion-icon>
+      
+                  <div>
+                    3 
+                  </div>
+              </div>
+             
           
-    </ion-slide>
-
-
-    <!-- slide pop -->
-    <ion-slide>
-        <ion-card>
-          <ion-card-header>
-            <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-            <ion-card-title>Card Title</ion-card-title>
-          </ion-card-header>
+              <div class="userage">
+                  <ion-icon style="color:#198d46;" name="calendar"></ion-icon>
+              
+                  <div>
+                    3M
+                  </div>
+              </div>
+              <br>
+              <button>EDIT</button>
+            </div>
+      
+            <div class="navbar-menu">
+      
+              <div class="wrapper">
+                  <div (click)="navBarClick(0)" [ngClass]="{'active': activeMenu == 0}">Posts</div>
+                  <div (click)="navBarClick(1)" [ngClass]="{'active': activeMenu == 1}">Comments</div>
+                  <div (click)="navBarClick(2)" [ngClass]="{'active': activeMenu == 2}">About</div>
+                </div>
+            </div>
+      
+        </div>
+      
         
-          <ion-card-content>
-            Keep close to Nature's heart... and break clear away, once in awhile,
-            and climb a mountain or spend a week in the woods. Wash your spirit clean.
-          </ion-card-content>
-        </ion-card>
-    </ion-slide>
-
-
-  </ion-slides>
+      
+        <ion-slides id="slides-profile" style="height: auto;" (ionSlideDidChange)="onSlideChange($event)">
+      
+        <!-- slide News -->
+          <ion-slide>
+      
+              <!-- <app-card [groupName]="groupName" [username]="username" [title]="title" [content]="content"></app-card>
+              <app-card [groupName]="groupName" [username]="username" [title]="title" [content]="content"></app-card>
+              <app-card [groupName]="groupName" [username]="username" [title]="title" [content]="content"></app-card>
+              <app-card [groupName]="groupName" [username]="username" [title]="title" [content]="content"></app-card>
+              <app-card [groupName]="groupName" [username]="username" [title]="title" [content]="content"></app-card>
+              <app-card [groupName]="groupName" [username]="username" [title]="title" [content]="content"></app-card> -->
+              
+      
+          </ion-slide>
+      
+          <!-- slide Home -->
+          <ion-slide>
+              
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+                  <ion-card-title>Card Title</ion-card-title>
+                </ion-card-header>
+              
+                <ion-card-content>
+                  Keep close to Nature's heart... and break clear away, once in awhile,
+                  and climb a mountain or spend a week in the woods. Wash your spirit clean.
+                </ion-card-content>
+              </ion-card>
+                
+          </ion-slide>
+      
+      
+          <!-- slide pop -->
+          <ion-slide>
+              <ion-card>
+                <ion-card-header>
+                  <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+                  <ion-card-title>Card Title</ion-card-title>
+                </ion-card-header>
+              
+                <ion-card-content>
+                  Keep close to Nature's heart... and break clear away, once in awhile,
+                  and climb a mountain or spend a week in the woods. Wash your spirit clean.
+                </ion-card-content>
+              </ion-card>
+          </ion-slide>
+      
+      
+        </ion-slides>
   
 </ion-content>
+
+
+<cred-cmp *ngIf="!isLoggedIn"></cred-cmp>
+
+
+

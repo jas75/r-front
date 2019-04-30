@@ -23,18 +23,29 @@ export class ProfilePage implements OnInit {
 
   slides: any;
 
+  isLoggedIn: boolean;
+
   constructor(
     private userService: UserService,
     private authService: AuthService
   ) { }
 
   ngOnInit() {
-    this.getUserProfile();
-    this.slides = this.returnSlides();
-    this.slides.options = {
-      effect: 'flip',
-      initialSlide: 0
-    };
+
+    this.authService.authenticationState.subscribe(state => {
+      console.log(state);
+      this.isLoggedIn = state;
+      console.log(this.isLoggedIn);
+    });
+
+    if (this.isLoggedIn) {
+      this.getUserProfile();
+      this.slides = this.returnSlides();
+      this.slides.options = {
+        effect: 'flip',
+        initialSlide: 0
+      };
+    }
   }
 
   getUserProfile() {

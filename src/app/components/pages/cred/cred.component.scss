@@ -1,0 +1,36 @@
+.body {
+    
+    
+
+    img {
+        margin-top: 30%;
+    }
+
+    p {
+        text-align: center;
+        font-weight: 700;
+        font-size: 0.9em;
+    }
+
+    .choice {
+        margin-top: 45%;
+        button {
+            width: 100%;
+            border-radius: 4px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .signup {
+            background-color: #4c8dff;
+            color: white;
+            font-weight: 700;
+        }
+
+        .login {
+            background-color: white;
+            color: #4c8dff;
+            font-weight: 700;
+        }
+    }
+}

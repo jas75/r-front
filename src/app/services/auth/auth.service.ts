@@ -7,6 +7,7 @@ import { Platform, AlertController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { catchError, retry, tap } from 'rxjs/operators';
 import { Identity } from 'src/app/interfaces/identity';
+import { Router } from '@angular/router';
 
 
 
@@ -20,14 +21,15 @@ export class AuthService {
 
   url = environment.url;
   user = null;
-  authenticationState = new BehaviorSubject(false)
+  authenticationState = new BehaviorSubject(false);
 
   constructor(
     private storage: Storage,
     private helper: JwtHelperService,
     private plt: Platform,
     private http: HttpClient,
-    private alertController: AlertController
+    private alertController: AlertController,
+    private router: Router
   ) {
       this.plt.ready().then(() => {
         this.checkToken();
@@ -103,6 +105,7 @@ export class AuthService {
     this.storage.remove(TOKEN_KEY).then(() => {
       this.storage.remove(USER_ID).then(() => {
         this.authenticationState.next(false);
+        this.router.navigate(['/tabs/tab1']);
       });
     });
   }

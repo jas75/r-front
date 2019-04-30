@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController, ModalController } from '@ionic/angular';
 import { PostPage } from '../post/post.page';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-main',
@@ -9,12 +10,18 @@ import { PostPage } from '../post/post.page';
 })
 export class MainPage implements OnInit {
 
+  isLoggedIn: boolean;
+
   constructor(
     private menuCtrl: MenuController,
-    private modalController: ModalController
+    private modalController: ModalController,
+    private authService: AuthService
     ) { }
 
   ngOnInit() {
+    this.authService.authenticationState.subscribe(state => {
+      this.isLoggedIn = state;
+    });
   }
 
   // Side menu methods

@@ -10,10 +10,12 @@ import { CredentialsComponent } from './UI/modals/credentials/credentials.compon
 import { LoginComponent } from './UI/modals/login/login.component';
 import { SignupComponent } from './UI/modals/signup/signup.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CredComponent } from './pages/cred/cred.component';
 
 
 @NgModule({
   declarations: [
+    CredComponent,
     HomeComponent,
     PopComponent,
     NewsComponent,
@@ -29,6 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ],
   exports: [
+    CredComponent,
     HomeComponent,
     PopComponent,
     NewsComponent,
