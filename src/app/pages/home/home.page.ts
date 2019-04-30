@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/services/auth/auth.service';
+import { ModalController } from '@ionic/angular';
+import { LoginComponent } from 'src/app/components/UI/modals/login/login.component';
+import { SignupComponent } from 'src/app/components/UI/modals/signup/signup.component';
 
 @Component({
   selector: 'app-home',
@@ -11,13 +15,22 @@ export class HomePage implements OnInit {
 
   activeMenu = 1;
 
-  constructor() { }
+  isLoggedIn: boolean;
+
+  constructor(
+    private authService: AuthService,
+    private modalController: ModalController
+  ) { }
 
   ngOnInit() {
     this.slides().options = {
         effect: 'flip',
         initialSlide: 1
-      };
+    };
+
+    this.authService.authenticationState.subscribe(state => {
+      this.isLoggedIn = state;
+    });
   }
 
   navBarClick(menu: number) {
@@ -50,10 +63,41 @@ export class HomePage implements OnInit {
     this.indexScroll = event.detail.scrollTop;
   }
 
+  async openLoginModal() {
+    const modal: HTMLIonModalElement =
+       await this.modalController.create({
+          component: LoginComponent,
+          componentProps: {
+             aParameter: true,
+             otherParameter: new Date()
+          }
+    });
+    await modal.present();
+  }
+
+  async openSignupModal() {
+    const modal: HTMLIonModalElement =
+       await this.modalController.create({
+          component: SignupComponent,
+          componentProps: {
+             aParameter: true,
+             otherParameter: new Date()
+          }
+    });
+    await modal.present();
+  }
+
+  dismissModal(afterLogin: boolean) {
+    if (afterLogin) {
+      this.modalController.dismiss(afterLogin);
+    } else {
+      this.modalController.dismiss();
+    }
+  }
+
+
   private slides() {
     const slides: any = document.querySelector('#home-slider');
     return slides;
   }
-
-
 }

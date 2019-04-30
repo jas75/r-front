@@ -32,10 +32,61 @@
       </ion-slide>
   
       <!-- slide Home -->
-      <ion-slide>
-          
-            <home-cmp></home-cmp>
+      <ion-slide>          
+            <home-cmp *ngIf="isLoggedIn"></home-cmp>
+            <div *ngIf="!isLoggedIn">
+              
+
+              <ion-grid class="join">
+                  <ion-row>
+                    <ion-col>
+                    
+                      <img src="../../../../assets/welcome.png">      
+                    
+                      <div>
+                        <span>Welcome!</span>
+                        
+                        <br>
+                        There's a community for every topic imaginable
+                      </div>
+                       
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col>
+
+                        <img src="../../../../assets/vote.png">
+
+                        <div>
+                          <span>Vote</span>
+                          <br>
+                            on posts and help communities lift the best content to the top!
+                        </div>
+                        
+                    </ion-col>
+                  </ion-row>
             
+                  <ion-row>
+                      <ion-col>
+
+                          <img src="../../../../assets/join.png">
+
+                          <div>
+                            <span>Join</span>
+
+                            <br>
+                            communities to fill this home feed with fresh posts
+                          </div> 
+                      </ion-col>
+                  </ion-row>
+              </ion-grid>
+
+              <div class="choice">
+                  <button (click)="openSignupModal()" class="signup">SIGN UP</button>
+                  <button (click)="openLoginModal()" class="login">LOG IN</button>
+              </div>
+            </div>
+
       </ion-slide>
   
 
