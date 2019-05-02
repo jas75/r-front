@@ -3,4 +3,6 @@
   inbox page works
 </ion-content>
 
-<cred-cmp *ngIf="!isLoggedIn"></cred-cmp>
+<ion-content  *ngIf="!isLoggedIn" [scrollY]="false">
+    <cred-cmp></cred-cmp>
+</ion-content>

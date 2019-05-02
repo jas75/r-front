@@ -1,7 +1,7 @@
-<ion-content [scrollEvents]="true" (ionScroll)="onScroll($event)">
+<ion-content *ngIf="isLoggedIn" [scrollEvents]="true" (ionScroll)="onScroll($event)">
 
   
-  <div *ngIf="isLoggedIn">
+  <div>
       <div class="bandeau-user">
 
           <div class="bogoss">
@@ -100,8 +100,10 @@
   
 </ion-content>
 
+<ion-content style="--padding-top:80px;" [scrollY]="false" *ngIf="!isLoggedIn">
+  <cred-cmp></cred-cmp>
+</ion-content>
 
-<cred-cmp *ngIf="!isLoggedIn"></cred-cmp>
 
 
 

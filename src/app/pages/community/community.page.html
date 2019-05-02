@@ -7,4 +7,6 @@
     <home-cmp></home-cmp>
 </ion-content>
 
-<cred-cmp *ngIf="!isLoggedIn"></cred-cmp>
+<ion-content [scrollY]="false" *ngIf="!isLoggedIn">
+    <cred-cmp></cred-cmp>
+</ion-content>
