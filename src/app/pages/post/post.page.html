@@ -1,5 +1,5 @@
 
-<ion-content [scrollY]="false" [scrollX]="false">
+<ion-content *ngIf="isLoggedIn" [scrollY]="false" [scrollX]="false">
 
   <div class="whatyoucando">
     <div class="link">
@@ -32,4 +32,13 @@
     </div>
   </div>
   <button class="dismiss" (click)="dismissModal()"><ion-icon name="close"></ion-icon></button>
+</ion-content>
+
+<ion-content *ngIf="!isLoggedIn">
+  
+  <div class="choice">
+      <button (click)="openSignupModal()" class="signup">SIGN UP</button>
+      <button (click)="openLoginModal()" class="login">LOG IN</button>
+  </div>
+
 </ion-content>
