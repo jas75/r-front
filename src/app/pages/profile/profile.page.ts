@@ -44,7 +44,7 @@ export class ProfilePage implements OnInit {
             initialSlide: 0
           };
         }
-      }, 100);
+      }, 500);
     });
   }
 
