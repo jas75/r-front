@@ -1,10 +1,26 @@
 
+<ion-content *ngIf="isLoggedIn">
+  <div class="choice">
+      <div class="icon">
+          <ion-icon name="rocket"></ion-icon>
+      </div>
 
-<ion-content *ngIf="isLoggedIn" padding>
-  
-    community page works
+      <div class="summary">
+          Browse communities
+      </div>
 
-    <home-cmp></home-cmp>
+  </div>
+
+  <div class="choice" (click)="navigateTo('create-community')">
+        <div class="icon">
+            <ion-icon style="font-size: 1.3em;" name="add"></ion-icon>
+        </div>
+
+        <div class="summary">
+            Create community
+        </div>
+
+    </div>
 </ion-content>
 
 <ion-content [scrollY]="false" *ngIf="!isLoggedIn">

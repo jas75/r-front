@@ -1,3 +1,25 @@
 ion-content {
     --padding-top: 80px;
+
+    .choice {
+        background-color: white;
+        display: inline-flex;
+        width: 100%;
+        padding: 10px;
+
+        .icon {
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            background-color: #0bb8cc;
+            color: white;
+            border-radius: 100px;
+            padding: 5px;
+        }
+
+        .summary {
+            margin-left: 30px;
+            font-weight: 700;
+        }
+    }
 }

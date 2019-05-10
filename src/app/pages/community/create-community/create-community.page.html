@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    <ion-title>Create your community</ion-title>
+
+    <button [disabled]="createCommunityForm.invalid" class="post-btn" (click)="logForm()" type="submit">CREATE</button>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+
+    <form [formGroup]="createCommunityForm" (ngSubmit)="logForm()">
+        <ion-grid>
+            <ion-row class="title">
+              <ion-col>
+                  <ion-item>
+                    <ion-input formControlName="name" type="text" placeholder="Choose a name for your community" ></ion-input>
+                  </ion-item>
+              </ion-col>
+            </ion-row>
+      
+            <ion-row class="text">
+                <ion-col>
+  
+                    <ion-item>
+                      <ion-input formControlName="topic" placeholder="Choose a topic for your community"></ion-input>
+                    </ion-item>
+           
+                </ion-col>
+              </ion-row>
+
+              <ion-row class="text">
+                <ion-col>
+  
+                    <ion-item>
+                      <ion-textarea formControlName="summary" placeholder="Briefly explain what is the point of your community (Optionnal)"></ion-textarea>
+                    </ion-item>
+            
+                </ion-col>
+              </ion-row>
+        </ion-grid>
+    </form>
+
+</ion-content>

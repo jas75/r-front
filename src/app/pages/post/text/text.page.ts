@@ -58,7 +58,6 @@ export class TextPage implements OnInit {
         },
         // handle all error cases
         err => console.log(err));
-        
       });
     });
   }

@@ -1,9 +1,14 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuardService } from './services/auth/auth-guard.service';
 
 const routes: Routes = [
   { path: '', loadChildren: './pages/main/main.module#MainPageModule' },
   { path: 'single-post/:post-id', loadChildren: './pages/single-post/single-post.module#SinglePostPageModule' },
+  { path: 'create-community',
+    loadChildren: './pages/community/create-community/create-community.module#CreateCommunityPageModule',
+    canActivate: [AuthGuardService]
+  },
   // { path: 'text', loadChildren: './pages/post/text/text.module#TextPageModule' },
   // { path: 'post', loadChildren: './pages/post/post.module#PostPageModule' },
   // { path: 'profile', loadChildren: './pages/profile/profile.module#ProfilePageModule' },
