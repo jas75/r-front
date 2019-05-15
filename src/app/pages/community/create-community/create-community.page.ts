@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth/auth.service';
 import { UserService } from 'src/app/services/user/user.service';
+import { CommunityService } from 'src/app/services/community/community.service';
 
 @Component({
   selector: 'app-create-community',
@@ -15,7 +16,8 @@ export class CreateCommunityPage implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private userService: UserService
+    private userService: UserService,
+    private communityService: CommunityService
   ) { }
 
   ngOnInit() {
@@ -37,7 +39,9 @@ export class CreateCommunityPage implements OnInit {
           summary: this.createCommunityForm.controls.summary.value
         };
 
-        console.log(community);
+        this.communityService.createCommunity(community).subscribe(communityResponse => {
+          console.log(communityResponse);
+        });
       });
     });
   }

@@ -35,16 +35,31 @@ export class ProfilePage implements OnInit {
     this.authService.authenticationState.subscribe(state => {
       this.isLoggedIn = state;
       // have to wait the subscriber result to execute this code, there must have another solution
-      setTimeout(() => {
-        if (this.isLoggedIn) {
-          this.getUserProfile();
+      // setTimeout(() => {
+      //   if (this.isLoggedIn) {
+      //     this.getUserProfile();
+      //     this.slides = this.returnSlides();
+      //     this.slides.options = {
+      //       effect: 'flip',
+      //       initialSlide: 0
+      //     };
+      //   }
+      // }, 500);
+
+      this.authService.authenticationState.complete();
+    },
+    err => console.log(err),
+    () => {
+     if (this.isLoggedIn) {
+        this.getUserProfile();
+        setTimeout(() => {
           this.slides = this.returnSlides();
           this.slides.options = {
-            effect: 'flip',
-            initialSlide: 0
-          };
-        }
-      }, 500);
+          effect: 'flip',
+          initialSlide: 0
+        };
+        }, 500);
+     }
     });
   }
 
