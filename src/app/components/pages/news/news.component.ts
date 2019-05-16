@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { PostService } from 'src/app/services/post/post.service';
+import { Post } from 'src/app/interfaces/post';
 
 @Component({
   selector: 'news-cmp',
@@ -7,14 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
 
+  newsPosts: Array<Post>;
 
-  groupName: string = 'News group';
-  username: string = 'username';
-  title: string = 'title';
-  content: string = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur, at eos? Saepe delectus, iste explicabo repellat eaque deleniti dignissimos esse rem sequi dolore commodi quod recusandae nihil doloremque. At, molestias!';
+  constructor(
+    private postService: PostService
+  ) { }
 
-  constructor() { }
-
-  ngOnInit() {}
+  ngOnInit() {
+    this.postService.getAllNewsPosts().subscribe(posts => {
+      this.newsPosts = posts;
+      console.log(this.newsPosts);
+    });
+  }
 
 }

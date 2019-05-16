@@ -10,4 +10,5 @@ export interface Post {
     community: string;
     content: string;
     title: string;
+    newsApi: boolean;
 }

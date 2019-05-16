@@ -13,7 +13,8 @@ export class HomeComponent implements OnInit {
     username: 'dov75',
     community: 'communityName',
     title: 'un titre',
-    content: 'du contenu'
+    content: 'du contenu',
+    newsApi: false
   };
 
 
