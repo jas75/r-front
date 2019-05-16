@@ -34,33 +34,23 @@ export class ProfilePage implements OnInit {
 
     this.authService.authenticationState.subscribe(state => {
       this.isLoggedIn = state;
-      // have to wait the subscriber result to execute this code, there must have another solution
-      // setTimeout(() => {
-      //   if (this.isLoggedIn) {
-      //     this.getUserProfile();
-      //     this.slides = this.returnSlides();
-      //     this.slides.options = {
-      //       effect: 'flip',
-      //       initialSlide: 0
-      //     };
-      //   }
-      // }, 500);
-
-      this.authService.authenticationState.complete();
+      console.log('BehaviorSubject: ' + state);
     },
-    err => console.log(err),
-    () => {
-     if (this.isLoggedIn) {
+    err => console.log(err)
+    );
+    console.log('valeur de this.isLoggedIn quand j ouvre la tabs profile: ' + this.isLoggedIn);
+    if (this.isLoggedIn) {
+      setTimeout(() => {
+        console.log('valeur de this.isLoggedIn quand je suis logge' + this.isLoggedIn);
         this.getUserProfile();
-        setTimeout(() => {
-          this.slides = this.returnSlides();
-          this.slides.options = {
+        // have to wait the subscriber result to execute this code, there must have another solution
+        this.slides = this.returnSlides();
+        this.slides.options = {
           effect: 'flip',
           initialSlide: 0
         };
-        }, 500);
-     }
-    });
+      }, 500);
+    }
   }
 
   getUserProfile() {
