@@ -21,5 +21,4 @@ export class NewsComponent implements OnInit {
       console.log(this.newsPosts);
     });
   }
-
 }
